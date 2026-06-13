@@ -1,0 +1,59 @@
+ion-content.news-bg {
+  --background: transparent !important;
+  background: linear-gradient(135deg, #0b1220, #111c33) !important;
+}
+
+/* fallback mais agressivo (Ionic 7 bug workaround) */
+ion-content.news-bg::part(background) {
+  background: linear-gradient(135deg, #0b1220, #111c33) !important;
+}
+
+/* garante que o scroll também não fica branco */
+ion-content.news-bg::part(scroll) {
+  background: transparent !important;
+}
+
+/* container */
+.container {
+  padding: 12px;
+}
+
+/* cards */
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.content {
+  padding: 12px;
+}
+
+.content h2 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.content p {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.fav-btn {
+  margin-top: 10px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+}

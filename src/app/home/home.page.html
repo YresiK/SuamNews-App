@@ -1,0 +1,38 @@
+<ion-content class="login-content">
+
+  <div class="login-box">
+
+    <h1>Suam News</h1>
+    <p></p>
+
+    <ion-item>
+      <ion-input
+        type="email"
+        placeholder="E-mail"
+        [(ngModel)]="email">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="password"
+        placeholder="Senha"
+        [(ngModel)]="senha">
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="login()">
+      Entrar
+    </ion-button>
+
+    <ion-button expand="block" fill="outline" routerLink="/cadastro">
+      Criar Conta
+    </ion-button>
+
+    <ion-button expand="block" color="medium" routerLink="/sobre">
+      Sobre
+    </ion-button>
+
+  </div>
+
+</ion-content>

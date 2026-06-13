@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Notícias</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleFavoritos()">
+        {{ mostrandoFavoritos ? 'Todas' : 'Favoritos' }}
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="news-bg">
+
+  <div class="container">
+
+    <div *ngFor="let n of listaExibida" class="card">
+
+      <img *ngIf="n.urlToImage" [src]="n.urlToImage" />
+      <img *ngIf="!n.urlToImage" src="assets/no-image.png" />
+
+      <div class="content">
+        <h2>{{ n.title }}</h2>
+        <p>{{ n.description || 'Sem descrição disponível' }}</p>
+
+        <button class="fav-btn" (click)="adicionarFavorito(n)">
+          Favoritar
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

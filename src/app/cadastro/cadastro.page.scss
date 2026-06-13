@@ -1,0 +1,41 @@
+.cadastro-content {
+  --background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.cadastro-box {
+  width: 90%;
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 25px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+}
+
+.cadastro-box h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.cadastro-box p {
+  color: #cbd5e1;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+ion-item {
+  --background: white;
+  --color: black;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+ion-input {
+  --color: black;
+  --placeholder-color: #666;
+}
+
+ion-button {
+  margin-top: 12px;
+  height: 48px;
+}

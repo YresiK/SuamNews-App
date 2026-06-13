@@ -1,0 +1,44 @@
+.login-content {
+  --background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.login-box {
+  width: 90%;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+}
+
+.login-box h1 {
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.login-box p {
+  text-align: center;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+}
+
+ion-item {
+  --background: white;
+  --color: black;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+ion-input {
+  --color: black;
+  --placeholder-color: #666;
+}
+
+ion-button {
+  margin-top: 12px;
+  height: 48px;
+  font-weight: 600;
+}
