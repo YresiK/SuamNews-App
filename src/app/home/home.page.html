@@ -14,24 +14,29 @@
     </ion-item>
 
     <ion-item>
-      <ion-input
-        type="password"
-        placeholder="Senha"
-        [(ngModel)]="senha">
-      </ion-input>
-    </ion-item>
+  <ion-input
+    type="password"
+    placeholder="Senha"
+    [(ngModel)]="senha">
+  </ion-input>
+</ion-item>
 
-    <ion-button expand="block" (click)="login()">
-      Entrar
-    </ion-button>
+<div class="esqueci-btn" (click)="recuperarSenha()">
+  Esqueci minha senha
+</div>
 
-    <ion-button expand="block" fill="outline" routerLink="/cadastro">
-      Criar Conta
-    </ion-button>
+<ion-button expand="block" (click)="login()">
+  Entrar
+</ion-button>
 
-    <ion-button expand="block" color="medium" routerLink="/sobre">
-      Sobre
-    </ion-button>
+    <ion-button expand="block" class="cadastro-btn" routerLink="/cadastro">
+  Criar Conta
+</ion-button>
+
+    <ion-button expand="block" class="sobre-btn" routerLink="/sobre">
+  Sobre
+</ion-button>
+    
 
   </div>
 

@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="dark">
-    <ion-title>Notícias</ion-title>
+  <ion-toolbar class="toolbar-news">
+    <ion-title>Suam News</ion-title>
 
     <ion-buttons slot="end">
       <ion-button (click)="toggleFavoritos()">
@@ -14,18 +14,30 @@
 
   <div class="container">
 
-    <div *ngFor="let n of listaExibida" class="card">
+    <div
+      *ngFor="let n of listaExibida"
+      class="card"
+      (click)="abrirNoticia(n)"
+    >
 
-      <img *ngIf="n.urlToImage" [src]="n.urlToImage" />
-      <img *ngIf="!n.urlToImage" src="assets/no-image.png" />
+      <img [src]="n.urlToImage">
 
       <div class="content">
-        <h2>{{ n.title }}</h2>
-        <p>{{ n.description || 'Sem descrição disponível' }}</p>
 
-        <button class="fav-btn" (click)="adicionarFavorito(n)">
-          Favoritar
-        </button>
+        <h2>{{ n.title }}</h2>
+
+        <p>
+          {{ n.description || 'Sem descrição disponível' }}
+        </p>
+
+        <button
+class="fav-btn"
+(click)="alternarFavorito(n); $event.stopPropagation()">
+
+{{ ehFavorito(n) ? 'Remover Favorito' : 'Favoritar' }}
+
+</button>
+
       </div>
 
     </div>

@@ -1,59 +1,76 @@
-ion-content.news-bg {
-  --background: transparent !important;
-  background: linear-gradient(135deg, #0b1220, #111c33) !important;
+.news-bg{
+  --background: linear-gradient(135deg,#180028,#050008);
 }
 
-/* fallback mais agressivo (Ionic 7 bug workaround) */
-ion-content.news-bg::part(background) {
-  background: linear-gradient(135deg, #0b1220, #111c33) !important;
+.toolbar-news{
+  --background:#0b0613;
+  --color:white;
 }
 
-/* garante que o scroll também não fica branco */
-ion-content.news-bg::part(scroll) {
-  background: transparent !important;
+.container{
+  padding:15px;
 }
 
-/* container */
-.container {
-  padding: 12px;
+.card{
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(168,85,247,.3);
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:20px;
+
+  box-shadow:
+  0 0 15px rgba(168,85,247,.2);
+
+  transition: .2s;
 }
 
-/* cards */
-.card {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  margin-bottom: 14px;
-  overflow: hidden;
-  color: #fff;
+.card:active{
+  transform: scale(.98);
 }
 
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
 }
 
-.content {
-  padding: 12px;
+.content{
+  padding:15px;
 }
 
-.content h2 {
-  font-size: 15px;
-  margin-bottom: 6px;
+.content h2{
+  color:white;
+  font-size:18px;
+  margin-bottom:10px;
 }
 
-.content p {
-  font-size: 13px;
-  opacity: 0.75;
+.content p{
+  color:#c7c7c7;
+  font-size:14px;
+  line-height:1.5;
 }
 
-.fav-btn {
-  margin-top: 10px;
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 10px;
+.fav-btn{
+
+  margin-top:15px;
+
+  width:100%;
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:linear-gradient(
+  90deg,
+  #8b2cf5,
+  #b54cff);
+
+  color:white;
+
+  font-weight:bold;
+
+  transition:.3s;
+
 }

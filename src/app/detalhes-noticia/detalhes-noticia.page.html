@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-toolbar class="toolbar-news">
+
+    <ion-buttons slot="start">
+      <ion-button fill="clear" routerLink="/noticias">
+  ←
+</ion-button>
+    </ion-buttons>
+
+    <ion-title>Notícia</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="news-bg">
+
+  <img [src]="noticia.urlToImage">
+
+  <div class="texto">
+
+    <h1>{{noticia.title}}</h1>
+
+    <p>
+      {{noticia.content}}
+    </p>
+
+    <a [href]="noticia.url"
+       target="_blank">
+
+       Ler notícia completa
+
+    </a>
+
+  </div>
+
+</ion-content>

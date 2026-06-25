@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import {
   IonContent,
@@ -35,7 +36,7 @@ export class NoticiasPage implements OnInit {
   favoritos: any[] = [];
   mostrandoFavoritos = false;
 
-  constructor(private noticiasService: NoticiasService) {}
+  constructor(private noticiasService: NoticiasService, private router: Router) {}
 
   ngOnInit() {
     this.carregarNoticias();
@@ -58,12 +59,23 @@ export class NoticiasPage implements OnInit {
     });
   }
 
-  adicionarFavorito(n: any) {
-    const existe = this.favoritos.some(f => f.title === n.title);
-    if (!existe) {
-      this.favoritos.push(n);
-    }
+  alternarFavorito(n:any){
+
+  const index = this.favoritos.findIndex(
+    f => f.title === n.title
+  );
+
+  if(index >= 0){
+
+    this.favoritos.splice(index,1);
+
+  }else{
+
+    this.favoritos.push(n);
+
   }
+
+}
 
   toggleFavoritos() {
     this.mostrandoFavoritos = !this.mostrandoFavoritos;
@@ -72,4 +84,24 @@ export class NoticiasPage implements OnInit {
   get listaExibida() {
     return this.mostrandoFavoritos ? this.favoritos : this.noticias;
   }
+
+  abrirNoticia(n:any){
+
+  localStorage.setItem(
+    'noticiaSelecionada',
+    JSON.stringify(n)
+  );
+
+  this.router.navigate(['/detalhes-noticia']);
+
+}
+
+ehFavorito(n:any){
+
+  return this.favoritos.some(
+    f => f.title === n.title
+  );
+
+}
+
 }
